@@ -1,73 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   background-color: black;
-  position: relative;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.home-container {
+  min-height: 200vh; /* Ensure there's room to scroll */
+}
+
+.content {
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-h1 {
+  align-items:center;
   position: relative;
-  z-index: 10;
-  font-size: 3rem;
-  margin: 0;
-  top: 50%;
-  text-align: center;
-  transform: translateY(-50%);
-  animation: glitch 1s infinite;
+  margin-bottom: 0px;
 }
 
-/* Responsive media queries */
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 2.5rem;
+h1.centered-title {
+  font-size: 5rem;
+  text-align: center;
+  animation: glitch 2s infinite;
+  font-family: Verdana, Tahoma, sans-serif;
+  margin: 0px;
+}
+
+h2.centered-title {
+  font-size: 4rem;
+  margin: 0;
+  text-align: center;
+  animation: glitch 1.5s infinite;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.bottom-content {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.details-section {
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.details-section.revealed {
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  h1.centered-title {
+    font-size: 5.5rem;
   }
 }
 
 @media (max-width: 992px) {
-  h1 {
-    font-size: 2rem;
+  h1.centered-title {
+    font-size: 5.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
+  h1.centered-title {
+    font-size: 4.5rem;
   }
 }
 
 @media (max-width: 576px) {
-  h1 {
-    font-size: 1.2rem;
+  h1.centered-title {
+    font-size: 2.2rem;
   }
 }
 
-/* Glitchy animation */
+/* Glitch Animation */
 @keyframes glitch {
-  0% {
-    text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
-  }
-  20% {
-    text-shadow: -2px -2px #ff0000, 2px 2px #00ff00;
-  }
-  40% {
-    text-shadow: 2px -2px #ff0000, -2px 2px #00ff00;
-  }
-  60% {
-    text-shadow: -2px 2px #ff0000, 2px -2px #00ff00;
-  }
-  80% {
-    text-shadow: 2px 2px #ff0000, -2px -2px #00ff00;
-  }
-  100% {
-    text-shadow: -2px -2px #ff0000, 2px 2px #00ff00;
-  }
+  0% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
+  25% { text-shadow: -3px 3px #00ff00, 3px -3px #ff0000; }
+  50% { text-shadow: 2px -2px #ff0000, -2px 2px #00ff00; }
+  100% { text-shadow: 0px 0px #ffffff; }
 }
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #20232a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 10px;
+  border: 2px solid #20232a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Details Section */
+.details-section {
+  display: none; /* Hidden by default */
+  padding: 2rem;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.details-section.revealed {
+  display: block;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
+  25% { text-shadow: -3px 3px #00ff00, 3px -3px #ff0000; }
+  50% { text-shadow: 2px -2px #ff0000, -2px 2px #00ff00; }
+  100% { text-shadow: 0px 0px #ffffff; }
+}
+
 .ghost-container {
   position: fixed;
   top: 0;
@@ -98,3 +172,35 @@ h1 {
 .ghost:nth-child(3) { animation-delay: 0.2s;  background: #0000FF; }
 .ghost:nth-child(4) { animation-delay: 0.3s;  background: #FF00FF; }
 .ghost:nth-child(5) { animation-delay: 0.4s;  background: #FFFF00; }
+
+
+/* scrollbar */
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #20232a; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-radius: 10px;
+  border: 2px solid #20232a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
