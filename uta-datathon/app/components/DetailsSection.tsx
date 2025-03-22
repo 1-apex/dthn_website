@@ -9,7 +9,7 @@ export default function DetailsSection() {
         problems.
       </p>
       <p>
-        This year's theme is focused on leveraging data science and AI to drive
+        This year&apos;s theme is focused on leveraging data science and AI to drive
         positive change in our communities.
       </p>
       <p>Join us for a weekend of learning, networking, and creativity!</p>

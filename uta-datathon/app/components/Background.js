@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 export default function Background() {
   const canvasRef = useRef(null);
-  let animationFrameId;
+  let animationFrameId = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,7 +51,7 @@ export default function Background() {
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameId.current);
     };
   }, []);
 

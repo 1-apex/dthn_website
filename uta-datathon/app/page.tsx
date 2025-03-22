@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import Background from "./components/Background";
 import Header from "./components/Header";
 import CountdownTimer from "./components/CountdownTimer";
@@ -12,18 +11,6 @@ import SpeakersSection from "./components/SpeakersSection";
 
 
 export default function Home() {
-  const [showEventDetails, setShowEventDetails] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight / 3) {
-        setShowEventDetails(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="home-container">
       <GhostTrail/>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SpeakersSection() {
   const speakers = [
@@ -38,12 +39,12 @@ export default function SpeakersSection() {
     <div className="speakers-section">
       <div className="speakers">
         {speakers.map((speaker, index) => (
-          <div key={index} className="speaker">
-            <img src={speaker.image} alt={speaker.name} />
+            <div key={index} className="speaker">
+            <Image src={speaker.image} alt={speaker.name} width={200} height={200} />
             <h4>{speaker.name}</h4>
             <p>{speaker.title}</p>
             <p>{speaker.description}</p>
-          </div>
+            </div>
         ))}
       </div>
     </div>
