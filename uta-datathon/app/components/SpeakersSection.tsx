@@ -7,31 +7,31 @@ export default function SpeakersSection() {
       name: "John Smith",
       title: "CEO, ABC Corporation",
       description: "Expert in AI and Machine Learning",
-      image: "/speakers/john-smith.jpg",
+      image: "/speakers/man.png",
     },
     {
       name: "Jane Doe",
       title: "CTO, DEF Startups",
       description: "Specialist in Cloud Computing",
-      image: "/speakers/jane-doe.jpg",
+      image: "/speakers/man.png",
     },
     {
       name: "Bob Johnson",
       title: "Professor, XYZ University",
       description: "Renowned Data Scientist",
-      image: "/speakers/bob-johnson.jpg",
+      image: "/speakers/man.png",
     },
     {
       name: "Alice Brown",
       title: "Founder, GHI Ventures",
       description: "Innovator in Blockchain Technology",
-      image: "/speakers/alice-brown.jpg",
+      image: "/speakers/man.png",
     },
     {
       name: "Mike Davis",
       title: "Director, JKL Research",
       description: "Expert in Cybersecurity",
-      image: "/speakers/mike-davis.jpg",
+      image: "/speakers/man.png",
     },
   ];
 

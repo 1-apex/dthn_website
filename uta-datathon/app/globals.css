@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@font-face {
+  font-family: "CrazyToon";
+  src: url("/fonts/CrazytoonDemoOutline.ttf") format("truetype");
+  font-weight:400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PolarVortex";
+  src: url("/fonts/PolarVortex-raAA.ttf") format("truetype");
+  font-weight:400;
+  font-style: normal;
+}
 
 body {
   margin: 0;
@@ -27,7 +39,7 @@ h1.centered-title {
   font-size: 5rem;
   text-align: center;
   animation: glitch 2s infinite;
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: "CrazyToon", Verdana, Tahoma, sans-serif;
   margin: 0px;
 }
 
@@ -214,6 +226,22 @@ canvas {
   max-width: 80%;
 }
 
+.faqs-section {
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.faqs-section:hover {
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.642);
+}
+
+.faqs-section::after {
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.faqs-section:hover::after {
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.15);
+}
+
 .faqs-grid {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -257,7 +285,7 @@ canvas {
 .arrow {
   font-size: 1.8rem;
   font-weight: bold;
-  transition: transform 0.3s;
+  transition: transform 0.8s;
   rotate: 90deg;
   color: #ffffff;
 }
@@ -270,7 +298,7 @@ canvas {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.8s ease-in-out;
   background: linear-gradient(
     to top left,
     transparent 10%,
@@ -281,7 +309,7 @@ canvas {
 
 .faq-answer.active {
   max-height: 200px;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.8s ease-in-out;
   background: linear-gradient(
     to top left,
     transparent 10%,
@@ -293,6 +321,7 @@ canvas {
 .faq-answer p {
   color: #ffffff;
   font-size: 1rem;
+  max-height: fit-content;
 }
 
 .faq-card {
@@ -307,132 +336,267 @@ canvas {
 
 /* team */
 
+/* Meet the Team Section */
 .meet-the-team-section {
-  padding: 20px;
-  background-color: #f9f9f9;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8); 
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 80%;
-}
-
-.meet-the-team-section h2 {
-  color: #410083;
-  margin-bottom: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .team {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
-.team h3 {
-  color: #666;
-  margin-bottom: 5px;
+.team h2 {
+  color: rgb(10, 255, 47); 
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .members {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
 }
 
 .member {
-  margin: 10px;
-  width: calc(33.33% - 20px);
-  background-color: #fff;
-  padding: 10px;
+  background: linear-gradient(transparent 40%, rgba(0, 69, 8, 0.526)); 
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 160px; 
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.member:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2); 
+}
+
+.member-image {
+  width: 80px; 
+  height: 80px;
+  object-fit: cover; 
+  border-radius: 50%; 
+  margin-bottom: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.5); 
 }
 
 .member h4 {
-  color: #333;
+  color: white;
   margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .member p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8); 
+  font-size: 0.9rem;
 }
 
-/* sponsors section */
 
+@media (max-width: 768px) {
+  .members {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .member {
+    width: 100%; 
+    max-width: 300px; 
+  }
+}
+
+
+/* Sponsors section */
 .sponsors-section {
   padding: 20px;
-  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(217, 215, 215, 0.1);
   margin: 20px auto;
   max-width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: large;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden; /* Ensure the rotating background stays within bounds */
+}
+
+.sponsors-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 70%);
+  transform: rotate(0deg);
+  animation: rotateBackground 20s linear infinite; /* Slow rotation */
+  z-index: 0;
 }
 
 .sponsors-section h2 {
-  color: #333;
-  margin-bottom: 10px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1; /* Ensure the heading is above the rotating background */
 }
 
 .sponsors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1; /* Ensure the sponsors are above the rotating background */
 }
 
 .sponsor {
-  margin: 10px;
-  width: calc(20% - 20px);
+  background: linear-gradient(
+    transparent 10%,
+    rgba(35, 2, 118, 0.526)
+  );
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 160px;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.sponsor:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
 
 .sponsor img {
-  width: 100%;
-  height: 50px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.sponsor h4 {
+  color: white;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .sponsor p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
 }
 
-/* Speakers */
 
+/* Speakers Section */
 .speakers-section {
   padding: 20px;
-  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(217, 215, 215, 0.1);
   margin: 20px auto;
   max-width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: large;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden; 
+}
+
+.speakers-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 70%);
+  transform: rotate(0deg);
+  animation: rotateBackground 20s linear infinite;
+  z-index: 0;
 }
 
 .speakers-section h2 {
-  color: #333;
-  margin-bottom: 10px;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1; 
 }
 
 .speakers {
   display: flex;
-  flex-wrap: wrap;
+  padding: 10px;
   justify-content: space-between;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1; 
 }
 
 .speaker {
-  margin: 10px;
-  width: calc(20% - 20px);
+  background: linear-gradient(
+    transparent 10%,
+    rgba(35, 2, 118, 0.526)
+  );
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 160px;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.speaker:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
 }
 
 .speaker img {
-  width: 100%;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .speaker h4 {
-  color: #333;
+  color: white;
   margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .speaker p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+}
+
+/* Slow rotation animation */
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

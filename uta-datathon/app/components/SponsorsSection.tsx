@@ -3,10 +3,10 @@ import React from "react";
 export default function SponsorsSection() {
   const sponsors = [
     { name: "Google", logo: "/sponsors/google_logo.png" },
-    { name: "Microsoft", logo: "/sponsors/microsoft.png" },
-    { name: "Amazon", logo: "/sponsors/amazon.png" },
-    { name: "Facebook", logo: "/sponsors/facebook.png" },
-    { name: "IBM", logo: "/sponsors/ibm.png" },
+    { name: "Microsoft", logo: "/sponsors/google_logo.png" },
+    { name: "Amazon", logo: "/sponsors/google_logo.png" },
+    { name: "Facebook", logo: "/sponsors/google_logo.png" },
+    { name: "IBM", logo: "/sponsors/google_logo.png" },
   ];
 
   return (
